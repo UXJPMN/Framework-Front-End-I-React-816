@@ -1,0 +1,18 @@
+.side-news {
+  border: 2px solid #2E0068;
+  border-radius: 8px;
+  padding: 24px;
+  max-width: 360px;
+  height: 100%;
+}
+
+.news-title {
+  font-size: 32px;
+  color: #2E0068;
+  margin-bottom: 16px;
+}
+
+.news-text {
+  margin-bottom: 16px;
+  line-height: 1.4;
+}

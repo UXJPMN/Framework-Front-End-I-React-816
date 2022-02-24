@@ -1,0 +1,7 @@
+.list-wrapper {
+  padding: 0 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  flex-grow: 1;
+}
