@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Component } from 'react'
 import './style.css'
 
@@ -15,6 +16,13 @@ class SideNews extends Component {
       </div>
     )
   }
+}
+
+SideNews.propTypes = {
+  news: PropTypes.exact({
+    title: PropTypes.string.isRequired,
+    paragraphs: PropTypes.arrayOf(PropTypes.string).isRequired
+  })
 }
 
 export default SideNews

@@ -37,7 +37,6 @@ function HighlightList() {
       />
       <Highlight
         title={ highlightData[3].title }
-        subtitle={ highlightData[3].subtitle }
       />
     </div>
   )

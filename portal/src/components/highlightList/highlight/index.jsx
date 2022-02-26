@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import './style.css'
 
 function Highlight({ title, subtitle }) {
@@ -10,6 +11,15 @@ function Highlight({ title, subtitle }) {
       <div className="fake-img"></div>
     </div>
   )
+}
+
+Highlight.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string
+}
+
+Highlight.defaultProps = {
+  subtitle: 'Sem subtitulo'
 }
 
 export default Highlight
