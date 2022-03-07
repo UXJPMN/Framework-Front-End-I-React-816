@@ -1,0 +1,10 @@
+.grid {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.line {
+  display: flex;
+  flex-flow: row nowrap;
+}
