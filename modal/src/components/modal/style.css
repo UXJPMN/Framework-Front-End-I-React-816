@@ -1,0 +1,18 @@
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  display: block;
+  width: 480px;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: #fff;
+  margin: 240px auto;
+}
