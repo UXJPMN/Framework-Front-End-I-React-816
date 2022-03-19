@@ -145,6 +145,8 @@ O formulário deve possuir os seguintes campos: Nome, Número do Cartão, Data d
  - O campo CVV deve conter 3 dígitos numéricos
  - O campo CPF deve conter 11 dígitos numéricos.
 
+Um formulário será inválido se ele mesmo passando nas validações tiver um número de cartão formado apenas por sequências de 1.
+
 ## Critérios de avaliação
 
 Serão avaliados:
