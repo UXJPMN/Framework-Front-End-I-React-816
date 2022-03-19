@@ -1,0 +1,9 @@
+.movies-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.movies-list:last-child {
+  flex-grow: 1;
+}

@@ -24,56 +24,34 @@ export default class DepositForm extends Component {
         }
       }
     }
-    this.changeName = this.changeName.bind(this)
-    this.changeBank = this.changeBank.bind(this)
-    this.changeAmount = this.changeAmount.bind(this)
     this.clearForm = this.clearForm.bind(this)
     this.dirtyComponent = this.dirtyComponent.bind(this)
+    this.changeFormValue = this.changeFormValue.bind(this)
   }
 
-  changeName($event) {
-    const errors = nameValidator($event.target.value)
+  changeFormValue($event) {
+    const { id, value } = $event.target
+    const stateRef = this.state
+    let errors
 
-    this.setState({
-      name: $event.target.value,
-      validations: {
-        ...this.state.validations,
-        name: {
-          ...this.state.validations.name,
-          errors
-        }
-      }
-    })
-  }
-
-  changeBank($event) {
-    const errors = bankValidator($event.target.value)
-
-    this.setState({
-      bank: $event.target.value,
-      validations: {
-        ...this.state.validations,
-        bank: {
-          ...this.state.validations.bank,
-          errors
-        }
-      }
-    })
-  }
-
-  changeAmount($event) {
-    const errors = amountValidator($event.target.value)
-
-    this.setState({
-      amount: $event.target.value,
-      validations: {
-        ...this.state.validations,
-        amount: {
-          ...this.state.validations.amount,
-          errors
-        }
-      }
-    })
+    switch(id) {
+      case 'name':
+        errors = nameValidator(value)
+        break
+      case 'bank':
+        errors = bankValidator(value)
+        break
+      case 'amount':
+        errors = amountValidator(value)
+        break
+      default:
+        errors = []
+        break
+    }
+    stateRef[id] = value
+    stateRef.validations[id].errors = errors
+    console.log('stateRef', stateRef)
+    this.setState({ ...stateRef })
   }
 
   clearForm() {
@@ -130,7 +108,7 @@ export default class DepositForm extends Component {
               name="name"
               id="name"
               value={ name }
-              onChange={ this.changeName }
+              onChange={ this.changeFormValue }
               onBlur={ this.dirtyComponent }
             />
             <br />
@@ -145,7 +123,7 @@ export default class DepositForm extends Component {
               name="bank"
               id="bank"
               value={ bank }
-              onChange={ this.changeBank }
+              onChange={ this.changeFormValue }
               onBlur={ this.dirtyComponent }
             >
               { bankList.map((bank) =>
@@ -165,7 +143,7 @@ export default class DepositForm extends Component {
               name="amount"
               id="amount"
               value={ amount }
-              onChange={ this.changeAmount }
+              onChange={ this.changeFormValue }
               onBlur={ this.dirtyComponent }
             />
             <br />

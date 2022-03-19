@@ -1,0 +1,41 @@
+.movie-wrapper {
+  border: 1px solid #000;
+  display: flex;
+  width: fit-content;
+  width: 480px;
+  margin: 24px;
+  border-radius: 8px;
+}
+
+.thumb {
+  height: 240px;
+  margin: 24px;
+}
+
+.info {
+  padding: 24px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-flow: column wrap;
+  width: 240px;
+  margin: 0 auto;
+  padding: 24px;
+  border: none;
+}
+
+.custom-label {
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+select {
+  font-size: 16px;
+  padding: 16px;
+}
+
+option {
+  padding: 8px;
+}
